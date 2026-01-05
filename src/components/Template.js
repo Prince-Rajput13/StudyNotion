@@ -1,6 +1,7 @@
 import React from 'react'
-
-function template({title,dec1,dec2,image,formtype, Loggedin}) {
+import Loginform from './Loginform';
+import SignupForm from './SignupForm';
+function template({title,dec1,dec2,image,formtype, }) {
   return (
     <div>
         <div>
@@ -11,7 +12,7 @@ function template({title,dec1,dec2,image,formtype, Loggedin}) {
             </p>
         </div>
             {
-                formtype==="Login" ? <LoginForm/> : <SignupForm/>;
+                formtype==="Login" ? <Loginform/> : <SignupForm/>
             }
         <div>
             <div></div>
@@ -21,8 +22,10 @@ function template({title,dec1,dec2,image,formtype, Loggedin}) {
         <button>
             Sign in with Google
         </button>
-
-
+        <div>
+            <img src='frame' alt="pattern" width={558} height={504} loading="lazy"></img>
+            <img src={image} alt="students" width={228} height={490} loading="lazy"/>
+        </div>
     </div>
   )
 }
