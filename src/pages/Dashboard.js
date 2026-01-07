@@ -2,7 +2,7 @@ import React from 'react'
 
 function Dashboard() {
   return (
-    <div className='Flex justify-center item-center'>
+    <div className='flex justify-center items-center text-3xl text-white h-full'>
     Welcome to Dashboard
     </div>
   )

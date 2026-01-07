@@ -6,13 +6,13 @@ function Navbar(props) {
     let Loggedin=props.Loggedin;
     let setLoggedin=props.setLoggedin;
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
 
         <Link to="/">
             <img src={Logo} alt="Logo"width={160} hight={32} loading="lazy"></img>
         </Link>
         <nav>
-            <ul className='flex gap-3'>
+            <ul className='flex gap-x-6 text-white'>
                 <li>
                     <Link to="/"> Home</Link>
                 </li>
@@ -24,20 +24,23 @@ function Navbar(props) {
                 </li>
             </ul>
         </nav>
-        <div className='flex ml-5 mr-3 gap-3'>
+        <div className='flex items-center gap-x-4'>
             { !Loggedin &&
                 <Link to="/Signup">
-                    <button>Sign Up</button>
+                    <button className='bg-richblack-800 text-white rounded-[8px] 
+                    py-[8px] px-[12px] border border-richblack-700'>Sign Up</button>
                 </Link>
             }
             {!Loggedin &&
                < Link to="/Login">
-                    <button>Login</button>
+                    <button className='bg-richblack-800 text-white rounded-[8px] 
+                    py-[8px] px-[12px] border border-richblack-700'>Login</button>
                 </Link>
             }
             { Loggedin &&
                 <Link to="/">
-                    <button onClick={()=>{
+                    <button className='bg-richblack-800 text-white rounded-[8px] 
+                    py-[8px] px-[12px] border border-richblack-700' onClick={()=>{
                         toast.success("Logged Out Successfully");
                         setLoggedin(false);
                         }
@@ -46,7 +49,8 @@ function Navbar(props) {
             }
             { Loggedin &&
                 <Link to="/Dashboard">
-                    <button>Dashboard</button>
+                    <button className='bg-richblack-800 text-white rounded-[8px] 
+                    py-[8px] px-[12px] border border-richblack-700' >Dashboard</button>
                 </Link>
             }
         </div>
